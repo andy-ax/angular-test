@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'hello world!';
+export class AppComponent implements OnInit  {
+  private title = 'hello world!';
+
+  constructor(){}
 
   plus(x: number, y: number): number {
     return x + y;
+  }
+
+  ngOnInit() {
+    this.plus(1, 2);
   }
 }
